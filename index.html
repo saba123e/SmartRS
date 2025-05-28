@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Deals Store</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    header { background: #333; color: #fff; padding: 1rem; text-align: center; }
+    .product { background: #fff; margin: 1rem auto; padding: 1rem; width: 90%; max-width: 600px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .product img { width: 100%; max-height: 300px; object-fit: contain; }
+    .product h2 { margin-top: 0; }
+    .price { font-size: 1.5rem; color: #e91e63; }
+    button { background: #28a745; color: white; padding: 0.5rem 1rem; border: none; cursor: pointer; }
+    button:hover { background: #218838; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Dropshipping Store</h1>
+  </header>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/500x300" alt="Sample Product">
+    <h2>Wireless Headphones</h2>
+    <p class="price">$49.99</p>
+    <p>High-quality wireless headphones with noise cancellation. Ships directly from our supplier.</p>
+    <button onclick="orderProduct('Wireless Headphones', 49.99)">Order Now</button>
+  </div>
+
+  <script>
+    function orderProduct(name, price) {
+      const email = "your-email@example.com"; // შეცვალე შენი ელფოსტით
+      const subject = encodeURIComponent(`New Order: ${name}`);
+      const body = encodeURIComponent(`A customer wants to buy: ${name}\nPrice: $${price}`);
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
